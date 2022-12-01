@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_app/ui/navPages/frontPage.dart';
+import 'package:social_media_app/ui/screens/sign_up.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -11,6 +13,7 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           backgroundColor: Color(0XFFC8B4E1),
           body: Center(
@@ -19,7 +22,7 @@ class _SignInState extends State<SignIn> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  "Something",
+                  "Hello U",
                   style: TextStyle(
                     fontFamily: 'DancingScript',
                     color: Colors.deepPurple,
@@ -90,7 +93,7 @@ class _SignInState extends State<SignIn> {
                         child: TextButton(
                       style: ButtonStyle(),
                       onPressed: () {
-                        Navigator.pop(context);
+                        MaterialPageRoute(builder: (context) => const FrontPage());
                       },
                       child: Text(
                         'LOG IN',
@@ -141,6 +144,7 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
                 TextButton(
+
                   child: Text(
                     'SIGN UP',
                     style: TextStyle(color: Colors.black),
@@ -148,7 +152,9 @@ class _SignInState extends State<SignIn> {
                   // style: ButtonStyle(
                   //
                   // ),
-                  onPressed: () {},
+                  onPressed: () {
+                    MaterialPageRoute(builder: (context) => const SignUp());
+                  },
                 ),
               ],
             ),
